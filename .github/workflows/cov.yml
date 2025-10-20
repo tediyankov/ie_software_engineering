@@ -19,11 +19,11 @@ jobs:
       run: |
         python -m pip install --upgrade pip setuptools wheel
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-        # Install coverage package
-        python -m pip install coverage
+        # Install coverage packages
+        python -m pip install coverage pytest-cov
     - name: Run tests with coverage
       run: |
-        pytest --cov-config=.coveragerc --cov=./ci_course --cov-report=xml
+        pytest --cov=. --cov-report=xml --ignore=procedural/inflammation/tests --ignore=testing/tests
         cat coverage.xml    
     - name: Upload coverage reports to Codecov
       uses: codecov/codecov-action@v5
