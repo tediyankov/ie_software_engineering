@@ -1,0 +1,14 @@
+# Ignore files with 'env' in the filename
+*env*
+
+# Common environment files (if you want to be more specific)
+.env
+.env.*
+*.env
+.environment
+
+# Virtual environment directories
+venv/
+env/
+.venv/
+.env/
